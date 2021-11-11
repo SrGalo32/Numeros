@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package views;
-
+import javax.swing.JOptionPane;
 /**
  *
  * @author edg02
@@ -16,6 +16,9 @@ public class Principal extends javax.swing.JFrame {
      */
     public Principal() {
         initComponents();
+        this.setExtendedState(MAXIMIZED_BOTH);
+        this.setDefaultCloseOperation(0);
+
     }
 
     /**
@@ -27,34 +30,105 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jMenuBar1 = new javax.swing.JMenuBar();
+        escritorio = new javax.swing.JDesktopPane();
+        jMenuBar2 = new javax.swing.JMenuBar();
+        menu_archivos = new javax.swing.JMenu();
+        menu_salir = new javax.swing.JMenuItem();
+        menu_juegos = new javax.swing.JMenu();
+        menu_palabras = new javax.swing.JMenuItem();
+        jSeparator1 = new javax.swing.JPopupMenu.Separator();
+        menu_numeros = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
+        menu_manual = new javax.swing.JMenuItem();
+        jSeparator2 = new javax.swing.JPopupMenu.Separator();
+        menu_acerca_de = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setAlwaysOnTop(true);
+        setTitle("El Juego de la Selva (Aprende los números)");
+        setResizable(false);
 
-        jMenu1.setText("File");
-        jMenuBar1.add(jMenu1);
+        escritorio.setToolTipText("");
 
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
+        javax.swing.GroupLayout escritorioLayout = new javax.swing.GroupLayout(escritorio);
+        escritorio.setLayout(escritorioLayout);
+        escritorioLayout.setHorizontalGroup(
+            escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 801, Short.MAX_VALUE)
+        );
+        escritorioLayout.setVerticalGroup(
+            escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 498, Short.MAX_VALUE)
+        );
 
-        setJMenuBar(jMenuBar1);
+        menu_archivos.setText("Archivos");
+        menu_archivos.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
+        menu_salir.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        menu_salir.setText("Salir");
+        menu_salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menu_salirActionPerformed(evt);
+            }
+        });
+        menu_archivos.add(menu_salir);
+
+        jMenuBar2.add(menu_archivos);
+
+        menu_juegos.setText("Juegos");
+        menu_juegos.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
+        menu_palabras.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        menu_palabras.setLabel("Escribamos con palabras");
+        menu_juegos.add(menu_palabras);
+        menu_juegos.add(jSeparator1);
+
+        menu_numeros.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        menu_numeros.setLabel("Escribamos con números");
+        menu_juegos.add(menu_numeros);
+
+        jMenuBar2.add(menu_juegos);
+
+        jMenu1.setText("Ayuda");
+        jMenu1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
+        menu_manual.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        menu_manual.setLabel("Manual");
+        jMenu1.add(menu_manual);
+        jMenu1.add(jSeparator2);
+
+        menu_acerca_de.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        menu_acerca_de.setLabel("Acerca de");
+        jMenu1.add(menu_acerca_de);
+
+        jMenuBar2.add(jMenu1);
+
+        setJMenuBar(jMenuBar2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 820, Short.MAX_VALUE)
+            .addComponent(escritorio)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 464, Short.MAX_VALUE)
+            .addComponent(escritorio)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void menu_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_salirActionPerformed
+        // acción para cerrar el juego
+        int n = JOptionPane.showConfirmDialog(null , "¿DESEA CERRAR EL PROGRAMA?",
+        "Confirmación", JOptionPane.YES_NO_OPTION);
+            if(n==JOptionPane.YES_OPTION)
+             {
+                JOptionPane.showMessageDialog(null, "GRACIAS POR UTILIZAR EL PROGRAMA");
+                    System.exit(0);
+             }     
+    
+    }//GEN-LAST:event_menu_salirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -92,8 +166,17 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JDesktopPane escritorio;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JPopupMenu.Separator jSeparator1;
+    private javax.swing.JPopupMenu.Separator jSeparator2;
+    private javax.swing.JMenuItem menu_acerca_de;
+    private javax.swing.JMenu menu_archivos;
+    private javax.swing.JMenu menu_juegos;
+    private javax.swing.JMenuItem menu_manual;
+    private javax.swing.JMenuItem menu_numeros;
+    private javax.swing.JMenuItem menu_palabras;
+    private javax.swing.JMenuItem menu_salir;
     // End of variables declaration//GEN-END:variables
 }
