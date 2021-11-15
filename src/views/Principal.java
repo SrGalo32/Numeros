@@ -98,6 +98,11 @@ public class Principal extends javax.swing.JFrame {
 
         menu_acerca_de.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         menu_acerca_de.setLabel("Acerca de");
+        menu_acerca_de.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menu_acerca_deActionPerformed(evt);
+            }
+        });
         jMenu1.add(menu_acerca_de);
 
         jMenuBar2.add(jMenu1);
@@ -129,6 +134,11 @@ public class Principal extends javax.swing.JFrame {
              }     
     
     }//GEN-LAST:event_menu_salirActionPerformed
+
+    private void menu_acerca_deActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_acerca_deActionPerformed
+        // Texto para créditos
+        JOptionPane.showMessageDialog(null, "<html>El Juego de la Selva (2021).<br>Yosthyn Gutierrez.<br>Edgardo Rivera. <br>Maylyn Oviedo. <br>Ceduc CI Cqbo 2021.</html>"); 
+    }//GEN-LAST:event_menu_acerca_deActionPerformed
 
     /**
      * @param args the command line arguments
